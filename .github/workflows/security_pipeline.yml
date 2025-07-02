@@ -34,6 +34,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           queries: security-and-quality
+          build-mode: autobuild
       
       - name: CodeQL Analysis
         uses: github/codeql-action/analyze@v3
@@ -221,3 +222,4 @@ jobs:
           docker stop test-app || true
           docker rm test-app || true
           docker network rm dast-network || true
+          
